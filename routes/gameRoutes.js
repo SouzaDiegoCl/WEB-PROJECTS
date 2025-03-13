@@ -9,6 +9,7 @@ gameRoutes.post("/games", gameController.createGame);
 // Endpoint para deletar jogo pelo id
 // Se o param fosse opcional seria :id?
 gameRoutes.delete("/games/:id", gameController.deleteGame);
-
+// Endpoint para alterar um jogo
+gameRoutes.put("/games/:id", gameController.updateGame);
 
 export default gameRoutes;

@@ -40,7 +40,21 @@ class gameService {
     try {
       await GameRepository.findByIdAndDelete(id);
       console.log(`Game Excluded - Id: ${id}}`);
-      
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async update(id, title, platform, year, price) {
+    try {
+      await GameRepository.findByIdAndUpdate(id, {
+        //title = title
+        title,
+        platform,
+        year,
+        price,        
+      });
+      console.log(`Dados do game atualizados com sucesso. ID = ${id}`)
     } catch (error) {
       console.log(error);
     }
