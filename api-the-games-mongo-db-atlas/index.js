@@ -1,18 +1,17 @@
 import express from "express";
-import mongoose from "mongoose";
-import Games from "./models/Games.js"
+import Games from "./models/Games.js";
+/* Conexão com o bd */
+import mongoose from "./db.connections.js";
+
 const app = express();
 
 // Importando as rotas (endpoints) de Games
-import gameRoutes from './routes/gameRoutes.js'
+import gameRoutes from "./routes/gameRoutes.js";
 
 // Configurações do Express
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use('/', gameRoutes)
-
-// Iniciando a conexão com o banco de dados do MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/api-the-games")
+app.use("/", gameRoutes);
 
 // ROTA PRINCIPAL
 app.get("/", (req, res) => {
@@ -31,7 +30,7 @@ app.get("/", (req, res) => {
       price: 200,
     },
   ];
-  res.json(games)
+  res.json(games);
 });
 
 // Iniciando o servidor
