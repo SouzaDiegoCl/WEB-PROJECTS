@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv';
+// Load environment variables from .env file
+dotenv.config();
 
-const dbUser = "souzadiegocl";
-const dbPassword = "";
+const dbUser = process.env.DB_USER || "";
+const dbPassword = process.env.DB_PASSWORD || "";
 
 // Iniciando a conexão com o banco de dados do MongoDB
 const connect = () => {
