@@ -19,7 +19,6 @@ class gameService {
 
   //Função para cadastrar jogos
   async create(title, platform, year, price) {
-    console.log("Teste Service");
     try {
       const newGame = new GameRepository({
         //title : title
