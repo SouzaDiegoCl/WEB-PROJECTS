@@ -17,7 +17,6 @@ const createGame = async (req, res) => {
   try {
     const { title, platform, year, price } = req.body;
     await gameService.create(title, platform, year, price);
-    console.log("Teste Controller");
 
     res.sendStatus(201); //Código 201 Created
   } catch (error) {
