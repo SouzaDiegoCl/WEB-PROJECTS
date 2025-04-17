@@ -3,12 +3,14 @@ import Descriptions from "@/components/Descriptions";
 import Dog from "@/components/Dog";
 import Form from "@/components/Form";
 import Parent from "@/components/Parent";
+import TaskList from "@/components/TaskList";
 import TrafficLight from "@/components/TrafficLight";
 import User from "@/components/User";
 import Welcome from "@/components/Welcome";
 import Head from "next/head";
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -37,6 +39,29 @@ export default function Home() {
         {/* Formulário */}
         <br />
         <Form />
+        <br />
+        {/* TaskList */}
+        <TaskList  tasks={[
+          {
+            id:1,
+            descricao: "1. Estudar React"
+          },
+          {
+            id:2,
+            descricao: "2. Estudar Java"
+          },
+          {
+            id:3,
+            descricao: "3. Estudar Js"
+          },
+          {
+            id:4,
+            descricao: "4. Estudar Python"
+          }
+          ]}  
+          /*tasks = {[]}
+          */
+          />
       </main>
     </>
   );
